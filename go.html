@@ -1,0 +1,9 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Запуск стенда</title>
+<style>body{font:20px -apple-system,sans-serif;margin:40px;max-width:46rem}code{display:block;font:22px Menlo,monospace;background:#f2f2f2;padding:16px;border-radius:8px;user-select:all}button{font-size:20px;padding:12px 20px;margin-top:12px}</style>
+<h1>Запуск стенда на Маке</h1>
+<p>1. Нажмите «Скопировать».</p>
+<code id="c">curl -fsSL https://sic-stand-a.github.io/go.sh | bash</code>
+<button onclick="navigator.clipboard.writeText(document.getElementById('c').textContent).then(()=>this.textContent='Скопировано')">Скопировать</button>
+<p>2. Откройте Терминал (значок <b>&gt;_</b> в Dock), вставьте (правый щелчок → Paste) и нажмите Enter.</p>
+<p>3. Скрипт проверит сеть, запустит фабрику и отпишется в Linear (SAF-4198).</p>
