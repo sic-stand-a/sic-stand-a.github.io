@@ -35,9 +35,10 @@ else
   echo "отчёт в Linear не ушёл — пришли фото этого окна"
 fi
 echo "== канал тревог"
+case "$NET" in *api.linear.app=200*github.com=200*) NETOK="да";; *) NETOK="не все —$NET";; esac
 MSG="🤖 sic_stand · стенд снова на связи ($(date '+%d.%m %H:%M'))
 
-Фабрика: ${ST%%|*}. Интернет:$NET.
+Фабрика: ${ST%%|*}. Linear и GitHub отвечают: ${NETOK}.
 Запущен на самом Маке: с ноутбука Мак в этой сети не виден (SAF-4198), поэтому пульт START/STOP пока не работает."
 if bash ~/sic_stand/stand/mac/tg-send.sh "$MSG"; then echo "сообщение в канал отправлено"; else echo "в канал не ушло"; fi
 echo "Готово. Окно можно закрыть."
