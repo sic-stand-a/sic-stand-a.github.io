@@ -34,4 +34,10 @@ if ~/sic_stand/tools/stand-linear comment "$T" --file "$F" >/dev/null 2>&1; then
 else
   echo "отчёт в Linear не ушёл — пришли фото этого окна"
 fi
+echo "== канал тревог"
+MSG="🤖 sic_stand · стенд снова на связи ($(date '+%d.%m %H:%M'))
+
+Фабрика: ${ST%%|*}. Интернет:$NET.
+Запущен на самом Маке: с ноутбука Мак в этой сети не виден (SAF-4198), поэтому пульт START/STOP пока не работает."
+if bash ~/sic_stand/stand/mac/tg-send.sh "$MSG"; then echo "сообщение в канал отправлено"; else echo "в канал не ушло"; fi
 echo "Готово. Окно можно закрыть."
